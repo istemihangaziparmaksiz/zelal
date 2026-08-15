@@ -8,12 +8,12 @@ const steps = [
     gif: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3ZtM3kyY2I2Mm1jNDBmaHRkNXExM3BxdTllZ3o0NXBhNWlqMWQzNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L95W4wv8nnb9K/giphy.gif"
   },
   {
-    text: "Son kararın mı gerçekten? 💔",
+    text: "Bıdı Bıdı Yapma Kral",
     btnText: "Hâlâ Hayır 😤",
     gif: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExajlzOGg5MG4zbml3eDVrNmp2NnBsaTN5Mzg5a2RvaWlpeTF2OGN2eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OPU6wUKARAJWjKtHs6/giphy.gif"
   },
   {
-    text: "Bir daha düşün bence... 👀",
+    text: "Sen Ne Olsun İstiyosun",
     btnText: "Düşündüm, Hayır!",
     gif: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmhvd2V6b251Z3p6aGR3MGk5NmFuaThkNm92a2x0MnV2cTY0c283ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ISOckXUybVfQ4/giphy.gif"
   },
@@ -23,7 +23,7 @@ const steps = [
     gif: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXA3ZXh3bmQ5enR5NzhxMjdleThnNGV6cnd0ODZqcW1mbjhzbXhhMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d2lcHJTG5Tscg/giphy.gif"
   },
   {
-    text: "Gerçekten kalbimi kırıyorsun... 💔",
+    text: "Hadi süründürme işte",
     btnText: "Üzgünüm ama Hayır",
     gif: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaG9oaGhzNXA2bmU3c2R1ZXdzc28wd3U0ZWV4aW0wZnd3OTFpa2dtcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif"
   },
@@ -33,12 +33,12 @@ const steps = [
     gif: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWcxdmF3anF5ZW5qYm90ZjFrcDlnMm9hZDJvdWhqNzlldnNmNXJkciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/artj92V8o75VPL7AeQ/giphy.gif"
   },
   {
-    text: "Çikolata ve kahve de ısmarlarım bak! 🍫☕",
+    text: "İstediğin filme de gideriz bak",
     btnText: "Rüşvet yemem!",
     gif: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDVqNmlrcW96dDVydjFscG0yZW1tOGNtdnJwbGN3Z3E1dndwMnZyYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BzyTuYCmvSORqs1ABM/giphy.gif"
   },
   {
-    text: "Bu kadar taş kalpli olamazsın... 🗿",
+    text: "Bu kadar odun olma",
     btnText: "Öyleyim 🗿",
     gif: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWVjcWdnbjlsM2lkaXgyOHpnYXdtYnFrZnF1YmU3Nmhpa25vN2c3bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7SF5scGB2AFrgsXP63/giphy.gif"
   },
