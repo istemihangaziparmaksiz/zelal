@@ -18,6 +18,11 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+html {
+  overflow-x: hidden;
+  height: 100%;
+}
+
 body {
   min-height: 100vh;
   min-height: 100dvh;
@@ -28,6 +33,13 @@ body {
   overflow-x: hidden;
   position: relative;
   padding: 1.5rem;
+}
+
+body.proposal-mode {
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden !important;
+  overscroll-behavior: none;
 }
 
 /* Arka Plan Uçuşan Kalpler */

@@ -133,21 +133,24 @@ function moveNoButton() {
   // 5. Butonu ekranın sınırları içine güvenle ışınla
   btnNo.classList.add('teleporting');
   
-  const margin = 20;
-  const vw = window.innerWidth;
-  const vh = window.innerHeight;
+  const vw = window.visualViewport ? window.visualViewport.width : (document.documentElement.clientWidth || window.innerWidth);
+  const vh = window.visualViewport ? window.visualViewport.height : (document.documentElement.clientHeight || window.innerHeight);
 
   // Gerçek buton boyutları (scale ile ölçeklenmiş)
-  const rawWidth = btnNo.offsetWidth || 120;
-  const rawHeight = btnNo.offsetHeight || 50;
+  const rawWidth = btnNo.scrollWidth || btnNo.offsetWidth || 130;
+  const rawHeight = btnNo.scrollHeight || btnNo.offsetHeight || 50;
   const actualWidth = rawWidth * noScale;
   const actualHeight = rawHeight * noScale;
 
-  const maxLeft = Math.max(margin, Math.floor(vw - actualWidth - margin));
-  const maxTop = Math.max(margin, Math.floor(vh - actualHeight - margin));
+  const safePaddingX = 20;
+  const safeTop = 30;
+  const safeBottom = 60;
 
-  const randomX = Math.floor(Math.random() * (maxLeft - margin + 1)) + margin;
-  const randomY = Math.floor(Math.random() * (maxTop - margin + 1)) + margin;
+  const maxLeft = Math.max(safePaddingX, Math.floor(vw - actualWidth - safePaddingX));
+  const maxTop = Math.max(safeTop, Math.floor(vh - actualHeight - safeBottom));
+
+  const randomX = Math.floor(Math.random() * (maxLeft - safePaddingX + 1)) + safePaddingX;
+  const randomY = Math.floor(Math.random() * (maxTop - safeTop + 1)) + safeTop;
 
   btnNo.style.left = `${randomX}px`;
   btnNo.style.top = `${randomY}px`;
@@ -211,7 +214,10 @@ btnYes.addEventListener('click', () => {
   // 1. Konfetiyi patlat
   triggerHeartsAndConfetti();
 
-  // 2. Kartları değiştir
+  // 2. Proposal modunu kaldır (Date planı rahatça kaydırılabilsin)
+  document.body.classList.remove('proposal-mode');
+
+  // 3. Kartları değiştir
   proposalCard.classList.add('hidden');
   if (btnNo) btnNo.style.display = 'none';
 
@@ -246,7 +252,8 @@ function createFloatingHearts() {
   }
 }
 
-// Sayfa yüklendiğinde kalpleri oluştur
+// Sayfa yüklendiğinde kalpleri oluştur ve proposal modunu aç
 document.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('proposal-mode');
   createFloatingHearts();
 });
