@@ -132,15 +132,18 @@ h1, h2, h3, h4 {
 }
 
 .question-text {
-  font-size: 1.65rem;
+  font-size: 1.55rem;
   font-weight: 700;
   line-height: 1.35;
   color: #ff3366;
   margin-bottom: 0.5rem;
-  min-height: 2.7rem;
+  min-height: 2.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  max-width: 100%;
 }
 
 .subtitle {
@@ -148,6 +151,7 @@ h1, h2, h3, h4 {
   color: var(--text-muted);
   font-weight: 600;
   margin-bottom: 1.8rem;
+  word-break: break-word;
 }
 
 /* Butonlar Alanı */
@@ -170,7 +174,7 @@ h1, h2, h3, h4 {
   font-weight: 600;
   padding: 0.85rem 1.8rem;
   border-radius: 50px;
-  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease, box-shadow 0.2s ease, font-size 0.2s ease, padding 0.2s ease;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease, box-shadow 0.2s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -182,6 +186,7 @@ h1, h2, h3, h4 {
   color: #ffffff;
   box-shadow: 0 8px 20px rgba(255, 42, 85, 0.35);
   z-index: 2;
+  transform-origin: center center;
 }
 
 .btn-yes:hover {
@@ -197,8 +202,11 @@ h1, h2, h3, h4 {
   background: #f1f3f5;
   color: #495057;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  z-index: 5;
-  white-space: nowrap;
+  z-index: 50;
+  max-width: 80vw;
+  text-align: center;
+  word-break: break-word;
+  transform-origin: top left;
 }
 
 .btn-no:hover {
@@ -208,7 +216,7 @@ h1, h2, h3, h4 {
 /* Hayır Butonunun Kaçış Durumu */
 .btn-no.teleporting {
   position: fixed !important;
-  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: left 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), top 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.25s ease;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -220,6 +228,7 @@ h1, h2, h3, h4 {
   font-size: 1.7rem;
   color: #ff3366;
   margin-bottom: 0.4rem;
+  word-break: break-word;
 }
 
 .success-subtitle {
@@ -227,6 +236,7 @@ h1, h2, h3, h4 {
   color: var(--text-muted);
   font-weight: 600;
   margin-bottom: 1.5rem;
+  word-break: break-word;
 }
 
 .date-details-card {
@@ -389,19 +399,20 @@ h1, h2, h3, h4 {
 /* Responsive */
 @media (max-width: 480px) {
   body {
-    padding: 1rem;
+    padding: 0.8rem;
   }
   
   .card {
-    padding: 1.8rem 1.3rem;
+    padding: 1.6rem 1.1rem;
+    border-radius: 22px;
   }
 
   .question-text {
-    font-size: 1.45rem;
+    font-size: 1.35rem;
   }
 
   .gif-wrapper {
-    height: 180px;
+    height: 170px;
   }
 
   .time-location-row {

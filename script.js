@@ -1,5 +1,5 @@
 // ==========================================
-// AŞAMALI METİNLER VE GIF'LER (Çok Daha Fazla Aşama!)
+// AŞAMALI METİNLER VE GIF'LER (Özelleştirilmiş!)
 // ==========================================
 const steps = [
   {
@@ -114,14 +114,13 @@ function moveNoButton() {
     btnNo.querySelector('span').innerText = stepData.btnText;
   }
 
-  // 2. Evet butonunu her tıklamada belirgin şekilde büyüt
+  // 2. Evet butonunu büyüt
   yesScale += 0.22;
   btnYes.style.transform = `scale(${yesScale})`;
   btnYes.style.zIndex = "20";
 
-  // 3. Hayır butonunu her tıklamada küçült (0.2'ye kadar iner)
-  noScale = Math.max(0.25, noScale - 0.055);
-  btnNo.style.transform = `scale(${noScale})`;
+  // 3. Hayır butonunu küçült
+  noScale = Math.max(0.28, noScale - 0.055);
 
   // 4. Son adıma gelindiyse Hayır butonu tamamen yok olsun
   if (currentStep >= steps.length - 1) {
@@ -131,25 +130,28 @@ function moveNoButton() {
     return;
   }
 
-  // 5. Butonu ekranın rastgele ve güvenli bir yerine ışınla
+  // 5. Butonu ekranın sınırları içine güvenle ışınla
   btnNo.classList.add('teleporting');
   
-  const padding = 25;
+  const margin = 20;
   const vw = window.innerWidth;
   const vh = window.innerHeight;
 
-  // Butonun yaklaşık boyutları
-  const btnWidth = (btnNo.offsetWidth || 100) * noScale;
-  const btnHeight = (btnNo.offsetHeight || 50) * noScale;
+  // Gerçek buton boyutları (scale ile ölçeklenmiş)
+  const rawWidth = btnNo.offsetWidth || 120;
+  const rawHeight = btnNo.offsetHeight || 50;
+  const actualWidth = rawWidth * noScale;
+  const actualHeight = rawHeight * noScale;
 
-  const maxX = Math.max(padding, vw - btnWidth - padding);
-  const maxY = Math.max(padding, vh - btnHeight - padding);
+  const maxLeft = Math.max(margin, Math.floor(vw - actualWidth - margin));
+  const maxTop = Math.max(margin, Math.floor(vh - actualHeight - margin));
 
-  const randomX = Math.floor(Math.random() * (maxX - padding + 1)) + padding;
-  const randomY = Math.floor(Math.random() * (maxY - padding + 1)) + padding;
+  const randomX = Math.floor(Math.random() * (maxLeft - margin + 1)) + margin;
+  const randomY = Math.floor(Math.random() * (maxTop - margin + 1)) + margin;
 
   btnNo.style.left = `${randomX}px`;
   btnNo.style.top = `${randomY}px`;
+  btnNo.style.transform = `scale(${noScale})`;
 
   currentStep++;
 }
