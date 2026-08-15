@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sana Bir Sorum Var... ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Arka Plan Uçuşan Kalpler -->
+  <div class="floating-hearts" id="floating-hearts"></div>
+
+  <main class="main-container">
+    
+    <!-- 1. ADIM: TEKLİF KARTI -->
+    <section class="card proposal-card" id="proposal-card">
+      <div class="gif-wrapper">
+        <img id="main-gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp1dzNqdnJkNmRleDRkMzB4em03aDRud3R6OGNmb3NqYmx3NDBqZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cLS1nZB2TnUQI/giphy.gif" alt="Sevimli GIF" />
+      </div>
+
+      <h1 class="question-text" id="question-text">Benimle date'e çıkar mısın? 👉👈</h1>
+      <p class="subtitle" id="subtitle">Doğru cevabı bildiğini ikimiz de biliyoruz... 😉</p>
+
+      <div class="buttons-container" id="buttons-container">
+        <button type="button" class="btn btn-yes" id="btn-yes">
+          <span>Evet! 🥰</span>
+        </button>
+        <button type="button" class="btn btn-no" id="btn-no">
+          <span>Hayır 🥺</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 2. ADIM: EVET SAYFASI / DATE PLANI (BAŞLANGIÇTA GİZLİ) -->
+    <section class="card success-card hidden" id="success-card">
+      <div class="gif-wrapper">
+        <img id="success-gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWcxdmF3anF5ZW5qYm90ZjFrcDlnMm9hZDJvdWhqNzlldnNmNXJkciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/artj92V8o75VPL7AeQ/giphy.gif" alt="Kutlama GIF" />
+      </div>
+
+      <h1 class="success-title">Yeeeeey! Harika Bir Karar! 🎉❤️</h1>
+      <p class="success-subtitle">Date planımız şimdiden hazır bile! 👇</p>
+
+      <div class="date-details-card">
+        
+        <div class="detail-header">
+          <div class="calendar-badge">
+            <span class="badge-icon">📅</span>
+            <span class="badge-title">Buluşma Günü</span>
+          </div>
+          <span class="badge-tag">Özel Randevu</span>
+        </div>
+
+        <div class="time-location-row">
+          <div class="info-pill">
+            <span class="pill-icon">🗓️</span>
+            <div>
+              <small>Tarih</small>
+              <strong>Bu Hafta Sonu ✨</strong>
+            </div>
+          </div>
+          <div class="info-pill">
+            <span class="pill-icon">⏰</span>
+            <div>
+              <small>Saat</small>
+              <strong>18:30 civarı 🌙</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="itinerary">
+          <h3 class="itinerary-title">✨ Günün Akışı:</h3>
+          
+          <div class="itinerary-item">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>☕ Tatlı Bir Kahve & Sohbet</h4>
+              <p>Güzel bir atmosferde kahvelerimizi yudumlayıp dedikodu & sohbet vakti.</p>
+            </div>
+          </div>
+
+          <div class="itinerary-item">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>🍝 Romantik Akşam Yemeği</h4>
+              <p>En sevdiğin lezzetler eşliğinde baş başa şahane bir akşam yemeği.</p>
+            </div>
+          </div>
+
+          <div class="itinerary-item">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>🌙 Akşam Yürüyüşü & Tatlı Kaçamağı</h4>
+              <p>Tatlı bir tatlıcıda dondurma / tatlı molası ve huzurlu bir yürüyüş.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="personal-note">
+          <span class="note-icon">💌</span>
+          <p><strong>Not:</strong> Tek yapman gereken hazırlanmak, seni almaya geleceğim! Seni çok seviyorum ❤️</p>
+        </div>
+
+      </div>
+
+      <button type="button" class="btn btn-celebrate" id="btn-celebrate">
+        <span>Tekrar Konfeti Patlat! 🎊</span>
+      </button>
+    </section>
+
+  </main>
+
+  <!-- Konfeti Kütüphanesi -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
