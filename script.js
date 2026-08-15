@@ -130,7 +130,7 @@ function moveNoButton() {
     return;
   }
 
-  // 5. Butonu ekranın sınırları içine güvenle ışınla
+  // 5. Butonu ekranın sınırları içine güvenle ışınla (Evet butonunun üstüne/altına binmesini engelle)
   btnNo.classList.add('teleporting');
   
   const vw = window.visualViewport ? window.visualViewport.width : (document.documentElement.clientWidth || window.innerWidth);
@@ -149,8 +149,39 @@ function moveNoButton() {
   const maxLeft = Math.max(safePaddingX, Math.floor(vw - actualWidth - safePaddingX));
   const maxTop = Math.max(safeTop, Math.floor(vh - actualHeight - safeBottom));
 
-  const randomX = Math.floor(Math.random() * (maxLeft - safePaddingX + 1)) + safePaddingX;
-  const randomY = Math.floor(Math.random() * (maxTop - safeTop + 1)) + safeTop;
+  // Evet butonunun ekrandaki güncel pozisyonu
+  const yesRect = btnYes.getBoundingClientRect();
+  const avoidBuffer = 35; // Evet butonunun 35px çevresine hiç yaklaşmasın
+
+  let randomX = safePaddingX;
+  let randomY = safeTop;
+  let attempts = 0;
+  const maxAttempts = 35;
+
+  while (attempts < maxAttempts) {
+    randomX = Math.floor(Math.random() * (maxLeft - safePaddingX + 1)) + safePaddingX;
+    randomY = Math.floor(Math.random() * (maxTop - safeTop + 1)) + safeTop;
+
+    const noBox = {
+      left: randomX,
+      right: randomX + actualWidth,
+      top: randomY,
+      bottom: randomY + actualHeight
+    };
+
+    // Evet butonu ile çakışma kontrolü
+    const overlapsWithYes = !(
+      noBox.right < (yesRect.left - avoidBuffer) ||
+      noBox.left > (yesRect.right + avoidBuffer) ||
+      noBox.bottom < (yesRect.top - avoidBuffer) ||
+      noBox.top > (yesRect.bottom + avoidBuffer)
+    );
+
+    if (!overlapsWithYes) {
+      break; // Güvenli boş bir alan bulundu
+    }
+    attempts++;
+  }
 
   btnNo.style.left = `${randomX}px`;
   btnNo.style.top = `${randomY}px`;
